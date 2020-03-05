@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Zhao Shenbin</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+       <script src="processing.js"></script>
+        
+        
+
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>I am<br />
+						Shenbin</h1>
+						<p>UX designer</p>
+                        
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Shenbin</a>
+                        
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">Portfolio</a></li>
+							<li><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+                
+					<div id="main">
+                        
+
+						<!-- Featured Post -->
+							<article class="post featured">  
+								<header class="major">
+                                     
+									<h2><a href="#">I design<br />
+									multimodal user interface</a></h2>
+									<p>Voice Interaction<br /> Automobile HMI<br /> Smartphone App</p>
+								</header>
+                                <!--
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+                              -->
+<!-- This is for the processing part -->
+		<div>		<script type="application/processing" data-processing-target="pjs">
+						PImage redImg, greenImg, blueImg;
+
+PImage createChannel(float r, float g, float b) {
+    PGraphics pg = createGraphics(200, 200);
+    pg.beginDraw();
+    pg.background(0x00);
+    pg.stroke(r, g, b);
+    pg.strokeWeight(20);
+    pg.noFill();
+    pg.ellipse(0.5 * pg.width, 0.5 * pg.height, pg.width - 22, pg.height - 22);
+    pg.endDraw();
+    return pg;
+}
+
+PImage drawChannel(PImage img, float x, float y) {
+    float u = img.width;
+    float v = img.height;
+    blend(img, 0, 0, u, v, x - 0.5 * u, y - 0.5 * v, u, v, SUBTRACT);
+}
+
+boolean paused;
+void mouseClicked() {
+    paused = !paused;
+    if (paused)
+        noLoop();
+    else
+        loop();
+}
+
+void setup() {
+    size(300, 300);
+    redImg = createChannel(0xff, 0x00, 0x00);
+    greenImg = createChannel(0x00, 0xff, 0x00);
+    blueImg = createChannel(0x00, 0x00, 0xff);
+}
+
+void draw() {
+    float x0 = 0.5 * width;
+    float y0 = 0.5 * height;
+    float dmouseX = mouseX - pmouseX;
+    float dmouseY = mouseY - pmouseY;
+    background(0xff);
+    drawChannel(redImg, x0 - dmouseX, y0 - dmouseY);
+    drawChannel(greenImg, x0, y0);
+    drawChannel(blueImg, x0 + dmouseX, y0 + dmouseY);
+}
+					</script>
+					<canvas id="pjs"> </canvas>
+			</div>
+
+<!-- ----------------------------------------------- -->
+							
+							</article>
+
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">March, 2019</span>
+										<h2><a href="hector.html">MG Hector<br />
+										India, Thailand</a></h2>
+									</header>
+									<a href="hector.html" class="image fit"><img src="images/hector.jpg" alt="" /></a>
+									<p>VUI Design, User Study, Usability Test</p>
+									<ul class="actions special">
+										<li><a href="hector.html" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">Jan, 2020</span>
+                                        
+										<h2><a href="#">
+                                            Ark Mobile <br />Travel in future</a></h2>
+                                        </header>
+                                            <a href="#" class="image fit"><img src="images/cerence.jpg" alt="" /></a>
+                                       <p>App design for IOV</p>
+                                                
+									
+									
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">Sep, 2019</span>
+										<h2><a href="#">LED Stripe<br />
+										Avatar</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/lsa-bg.jpeg" alt="" /></a>
+									<p>A new design of the virtual avatar. Patented.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 14, 2017</span>
+										<h2><a href="#">Measuring naturalness of<br />
+										TTS voices</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/tts-bg.png" alt="" /></a>
+									<p>An A/B test on several TTS voices. </p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Live<br />
+										Democar</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Eyebot<br /><br />
+										</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions special">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+							</section>
+
+						<!-- Footer -->
+							
+
+					</div>
+
+				<!-- Footer 
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="3"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+-->
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
