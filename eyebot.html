@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Eyebot</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+	  
+    
+   
+
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-16 order-md-last ftco-animate">
+            <h1 class="mb-3 h1">Eyebot</h1>
+              <p>Multimodal interaction, Arduino, Prototype</p>
+              <p>Use your eye to control the robot.</p>
+              <br />
+               <p>
+              <video width="1080px" height="auto" controls="controls">
+						<source src="images/eye.mp4" type="video/mp4" />
+					</video>
+            </p>
+              
+               <h2 class="mb-3 mt-5 h1">#1. Design Approach</h2>
+              <h3>First approach - for help building children's concentration</h3>
+              <p>We did researches on attention control and children's ability to concentrate, and discovered a few
+						factors and principles of the cognitive process of attention control,
+						which is thought to be closely related to other executive functions such as working memory.<br />
+						6-year-old: capacity to focus on a task for at least 15 minutes<br />
+						9-year-old: capacity to focus the attention for one hour<br />
+					</p>
+               <p><center>
+              <img src="images/eye-flow.png" alt="MG1" class="img-fluid"></center>
+            </p>
+             <p>Therefore, we developed the idea of a "drawing robot" that the child needs to look at
+					a piece of paper with the diagram they need to draw. Meanwhile, the robot will draw the
+					same diagram that the child is "drawing" with his/her pupils.</p>
+               <p><center>
+              <img src="images/eye-draw.png" alt="MG1" class="img-fluid"></center>
+            </p>
+             <p><center>Arduino drawing robot</center></p>
+              <p>Then, we did researches and prototyping with our classmates who acted as the users.
+					And we found that the present design concept can be limiting the users, since the arduino
+					robot is able to do more things. Therefore, we have the second design approach.</p>
+               <h3>Second approach - for help building children's concentration and <strong>for disabled patients</strong></h3>
+              
+              <p>Regarding the principle that "less is more", we decided not to give the users too many restrictions.
+						They will be free to use the eyebot in their own ways, and it also extends the project with
+						a lot more possibilities.<br />
+						And we have always been trying to take control of objects additional to our hands. This approach would be
+						a solution to help disabled patients, regarding that some of them might only have their pupils
+						available to pass information. Meanwhile, children can still use it as a drawing robot.</p>
+					<p>Therefore, the main concept would be:<br />
+					<strong>Use your eyes to control the robot.</strong></p>
+              
+               <h2 class="mb-3 mt-5 h1">#2. Prototype</h2>
+              <p><center>
+              <img src="images/eye-01.JPG" alt="MG1" class="img-fluid"></center>
+            </p>
+              <p><center>timeline</center></p>
+              <p>The project involves three kinds of interfaces, the <strong>eyetracker</strong>
+						from <a href="http://pupil-labs.com" target="_blank">pupil-labs</a>,
+						the <strong>arduino robot</strong> with bluetooth from specs lab and a PC as controller.</p>
+              <p><center>
+              <img src="images/eye-02.JPG" alt="MG1" class="img-fluid"></center>
+            </p>
+               <p><center>System flow</center></p>
+              <p>First, we get the gaze position data from the eyetracker, which is (x,y)
+						position. Then the data is sent through local port to the processing program.
+						We translate the gaze position data to make a good control of the robot and finally
+						send the instructions to the arduino robot through bluetooth port.</p>
+              
+         
+            
+             <h2 class="mb-3 mt-5 h1">#3. Demo</h2>
+           <p>
+						During the final demo session, it was concluded that the eyebot offers a good
+						user experience for humans to manipulate the robot through their eyes.
+						Other possibilities of the use of eyebot were also discussed and had varies extensions.
+						It was an approach of embodied interaction and we hope it could enlighten some aspects that
+						we will achieve in the future.
+					</p>
+              <p><center>
+              <img src="images/eye_robot.JPG" alt="MG1" class="img-fluid"></center>
+            </p>
+               <p><center>
+              <img src="images/eye_group.jpg" alt="MG1" class="img-fluid"></center>
+            </p>
+             
+
+					<p>
+						Some problems were also found during the testing. Such as: the tiredness of the pupils,
+						the situation that you cannot see the robot while you're controlling. Further improvements shall
+						be made.
+					</p>
+                <p><center>
+              <img src="images/eye_people.JPG" alt="MG1" class="img-fluid"></center>
+            </p>
+            
+              
+             
+                <br /><br /><br /><br />
+            <p><a href="index.html" class="btn btn-primary py-3 px-4">Back To Home</a></p>
+            </div>
+
+          </div> <!-- .col-md-8 -->
+
+        </div>
+      
+
+   
+
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
