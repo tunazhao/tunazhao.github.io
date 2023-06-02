@@ -178,10 +178,10 @@ input, select, textarea {
 	p {
 		text-align: justify;
 		margin: 0 0 2rem 0;
-        font-family: "Open Sans", Arial, sans-serif;
+        font-family: "Verdana", Arial, sans-serif;
 		font-weight: 300;
-		font-size: 1.2rem;
-		line-height: 2.375;
+		font-size: 1rem;
+		line-height: 1.5;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
