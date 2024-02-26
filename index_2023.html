@@ -11,11 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-      <!-- <script src="processing.js"></script>-->
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.6.6/processing.min.js"></script>
-         <!--<script src="processing.js"></script>-->
+       <script src="processing.js"></script>
         
-	<link rel="stylesheet" type="text/css" href="style.css">
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99302834-1"></script>
@@ -41,13 +38,14 @@
 						<p>UX designer</p>
                         
 						<ul class="actions">
-							<li><a href="#nav" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
 						</ul>
 					</div>
 
 				<!-- Header -->
 					<header id="header">
 						<a href="index.html" class="logo">Shenbin</a>
+                        
 					</header>
 
 				<!-- Nav -->
@@ -71,76 +69,60 @@
                                      
 									<h2>I design<br />
 									multimodal user interface</h2>
-									<!--<p>Voice Interaction<br />Sound Design<br />Design Strategy</p>
+									<p>Voice Interaction<br />Sound Design<br />Vehicle HMI<br />Multimodal Innovations<br />Design Strategy</p>
 								</header>
                                 <!--
 								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
                               -->
 <!-- This is for the processing part -->
-		<div>		
-   
+		<div>		<script type="application/processing" data-processing-target="pjs">
+						PImage redImg, greenImg, blueImg;
 
-   <script type="application/processing" data-processing-target="pjs">
-    float xincr, yincr, xincr2, yincr2, dst, fp, fp2;
-boolean isBlk = false;
+PImage createChannel(float r, float g, float b) {
+    PGraphics pg = createGraphics(200, 200);
+    pg.beginDraw();
+    pg.background(0x00);
+    pg.stroke(r, g, b);
+    pg.strokeWeight(20);
+    pg.noFill();
+    pg.ellipse(0.5 * pg.width, 0.5 * pg.height, pg.width - 22, pg.height - 22);
+    pg.endDraw();
+    return pg;
+}
 
+PImage drawChannel(PImage img, float x, float y) {
+    float u = img.width;
+    float v = img.height;
+    blend(img, 0, 0, u, v, x - 0.5 * u, y - 0.5 * v, u, v, SUBTRACT);
+}
+
+boolean paused;
+void mouseClicked() {
+    paused = !paused;
+    if (paused)
+        noLoop();
+    else
+        loop();
+}
 
 void setup() {
-  size(900, 500);
-  background(255);
-  dst = 200;
-  smooth();
-  noiseSeed(123);
+    size(300, 300);
+    redImg = createChannel(0xff, 0x00, 0x00);
+    greenImg = createChannel(0x00, 0xff, 0x00);
+    blueImg = createChannel(0x00, 0x00, 0xff);
 }
 
 void draw() {
-  if (isBlk) {
-    background(255);
-    stroke(200);
-    fill(200);
-  } else {
-    background(255);
-    stroke(50);
-    fill(50);
-  }
-
-  noFill();
-  
-  textAlign(CENTER, CENTER);
-  textSize(15);
-  text("VOICE INTERACTION", width/2, height/2-50); 
-  text("SOUND DESIGN", width/2, height/2); 
-  text("DESIGN STRATEGY", width/2, height/2+50); 
-
-  translate(width/2, height/2);
-
-  fp = map(mouseX, 0, width, -.05, .05);
-  fp2 = map(mouseY, 0, height, -.05, .05);
-
-  xincr += .001;
-  yincr += .001;
-
-  yincr2 = yincr;
-  for (float y = -dst; y <= dst; y += 5) {
-    yincr2 += fp;
-    beginShape();
-    xincr2 = xincr;
-    for (float x = -dst; x <= dst; x += 5) {
-      xincr2 += fp2;
-      vertex(x * noise(xincr2, yincr2) * 3, y * noise(xincr2, yincr2) * 3);
-    }
-    endShape();
-  }
+    float x0 = 0.5 * width;
+    float y0 = 0.5 * height;
+    float dmouseX = mouseX - pmouseX;
+    float dmouseY = mouseY - pmouseY;
+    background(0xff);
+    drawChannel(redImg, x0 - dmouseX, y0 - dmouseY);
+    drawChannel(greenImg, x0, y0);
+    drawChannel(blueImg, x0 + dmouseX, y0 + dmouseY);
 }
-
-void mousePressed() {
-  isBlk = !isBlk;
-}
-
-
-    </script>
-
-				
+					</script>
 					<canvas id="pjs"> </canvas>
 			</div>
 
